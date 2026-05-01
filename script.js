@@ -64,8 +64,7 @@ function playGame(){
         if(computerChoice == humanChoice){
             console.log(`User chose ${humanChoice}, computer chose ${computerChoice}`)
             console.log("It's a draw");
-            humanScore++;
-            computerScore++;
+    
         }else if(humanChoice == "rock" && computerChoice == "scissors"){
             console.log(`User chose ${humanChoice}, computer chose ${computerChoice}`)
             console.log("Rock crashes scissors. Player wins");
