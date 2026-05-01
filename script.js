@@ -43,7 +43,11 @@ function getComputerChoice(){
     return comChoice;
 }
 
-function getHumanChoice(){}
+function getHumanChoice(){
+    let choice = prompt("Rock, paper, scissors?");
+    choice = choice.toLowerCase();
+    return choice
+}
 
 function playRound(){}
 
