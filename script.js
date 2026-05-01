@@ -32,6 +32,7 @@ function getComputerChoice(){
 
     //Determine computer choice from random number
     let comChoice;
+
     if(rand == 1){
         comChoice = "rock";
     } else if (rand == 2){
@@ -44,12 +45,58 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
+    //Input user choice
     let choice = prompt("Rock, paper, scissors?");
+
+    //Convert to lowercase
     choice = choice.toLowerCase();
+
     return choice
 }
 
-function playRound(){}
+humanScore = 0;
+computerScore = 0;
 
-function playGame(){}
+function playRound(humanChoice, computerChoice){
+    //Assign return values to Choice variables
+    humanChoice =  getHumanChoice();
+    computerChoice = getComputerChoice();
 
+    //Determine winner
+    if(computerChoice == humanChoice){
+        console.log(`User chose ${humanChoice}, computer chose ${computerChoice}`)
+        console.log("It's a draw");
+    }else if(humanChoice == "rock" && computerChoice == "scissors"){
+        console.log(`User chose ${humanChoice}, computer chose ${computerChoice}`)
+        console.log("Rock crashes scissors. Player wins");
+        humanScore++;
+    }
+    else if(humanChoice == "paper" && computerChoice == "rock"){
+        console.log(`User chose ${humanChoice}, computer chose ${computerChoice}`)
+        console.log("Paper covers rock. Player wins!");
+        humanScore++;
+    }
+    else if(humanChoice == "scissors" && computerChoice == "paper"){
+        console.log(`User chose ${humanChoice}, computer chose ${computerChoice}`)
+        console.log("Scissors cut paper. Player wins!");
+        humanScore++;
+    }
+    else if(computerChoice == "rock" && humanChoice == "scissors"){
+        console.log(`User chose ${humanChoice}, computer chose ${computerChoice}`)
+        console.log("Rock crashes scissors. Computer wins");
+        computerScore++;
+    }
+    else if(computerChoice == "paper" && humanChoice == "rock"){
+        console.log(`User chose ${humanChoice}, computer chose ${computerChoice}`)
+        console.log("Paper covers rock. Computer wins!");
+        computerScore++;
+    }
+    else if(computerChoice == "scissors" && humanChoice == "paper"){
+        console.log(`User chose ${humanChoice}, computer chose ${computerChoice}`)
+        console.log("Scissors cut paper. Coputer wins!");
+        computerScore++;
+    }
+    else {
+        console.log(`${humanChoice} is invalid`);
+    }
+}
